@@ -28,13 +28,29 @@
 <a class="btn btn-primary " href="/clientes/create">Cadastra Novo</a>
 
 <br> <br>
-@foreach($clientes as $c)
 
-    Nome:{{$c->nome}} - Telefone:{{$c->telefone}}
-    <a href="/clientes/edit/{{$c->id}}">  Editar</a>
-    <a href="javascript:excluirCliente({{ $c->id }})">Excluir</a>
-    <hr>
-
-@endforeach
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($clientes as $c)
+        <tr>
+            <td>{{ $c->id }}</td>
+            <td>{{ $c->nome }}</td>
+            <td>{{ $c->telefone }}</td>
+            <td>
+                <a class="btn btn-primary" href="/clientes/edit/{{$c->id}}">Editar</a>
+                <a class="btn btn-danger" href="javascript:excluirCliente({{ $c->id }})">Excluir</a>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
 
 @endsection

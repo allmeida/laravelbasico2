@@ -11,6 +11,14 @@
     <title>@yield('titulo')</title>
   </head>
   <body>
+
+    <div class="container">
+        <div class="jumbotron text-center" style="margin-bottom:0">
+            <h1>Sistema Cadastro de Clientes</h1>
+            <br>
+        </div>
+    </div>
+<br>
     <div class="container">
         @include('flash::message')
         @yield('conteudo')

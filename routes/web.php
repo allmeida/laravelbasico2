@@ -15,10 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/clientes','ClienteController@index');
 Route::get('/clientes/create','ClienteController@create');
 Route::post('/clientes/create','ClienteController@store');
 Route::get ('/clientes/edit/{id}','ClienteController@edit');
 Route::put ('/clientes/edit/{id}','ClienteController@update');
 Route::delete ('/clientes/{id}','ClienteController@destroy');
+
+
 
